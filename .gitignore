@@ -1,2 +1,9 @@
 .DS_Store
 Thumbs.db
+
+# Serena
+.serena/
+
+# Reference material not used in the site
+assets/cardapio/
+
