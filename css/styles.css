@@ -592,6 +592,62 @@ input:focus-visible {
   object-fit: cover;
 }
 
+/* Moldura de retrato ao redor do vídeo da seção Sobre: borda dupla dourada
+   com cantos decorativos, remetendo ao acabamento de porta-retrato/quadro
+   emoldurado, consistente com o dourado envelhecido de destaque da marca
+   (--color-accent / --color-accent-strong) e o motivo de bordas duplas já
+   presente na identidade (ver docs/design-system.md, "Elemento gráfico de
+   marca"). Puramente decorativo: não altera o <video> nem seu comportamento. */
+.sobre-video-frame {
+  position: relative;
+  padding: var(--space-2);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-accent);
+  box-shadow:
+    0 0 0 6px var(--color-bg),
+    0 0 0 7px var(--color-accent-strong),
+    0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.sobre-video-frame::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--space-2) / 2);
+  border: 1px solid var(--color-accent);
+  pointer-events: none;
+}
+
+.sobre-video-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(to right, var(--color-accent-strong) 2px, transparent 2px),
+    linear-gradient(to bottom, var(--color-accent-strong) 2px, transparent 2px),
+    linear-gradient(to left, var(--color-accent-strong) 2px, transparent 2px),
+    linear-gradient(to bottom, var(--color-accent-strong) 2px, transparent 2px),
+    linear-gradient(to right, var(--color-accent-strong) 2px, transparent 2px),
+    linear-gradient(to top, var(--color-accent-strong) 2px, transparent 2px),
+    linear-gradient(to left, var(--color-accent-strong) 2px, transparent 2px),
+    linear-gradient(to top, var(--color-accent-strong) 2px, transparent 2px);
+  background-position:
+    top left, top left,
+    top right, top right,
+    bottom left, bottom left,
+    bottom right, bottom right;
+  background-size:
+    18px 2px, 2px 18px,
+    18px 2px, 2px 18px,
+    18px 2px, 2px 18px,
+    18px 2px, 2px 18px;
+}
+
+.sobre-video-frame .sobre-video {
+  display: block;
+}
+
 /* Vídeo da seção Sobre: mesmas dimensões/proporção da imagem que
    substituiu (.sobre-imagem), carregado sob demanda por setupSobreVideo()
    (js/main.js) via IntersectionObserver, só quando a seção entra em
