@@ -567,10 +567,24 @@ input:focus-visible {
 .menu-group-title {
   border-bottom: 2px solid var(--color-border);
   padding-bottom: var(--space-1);
+  text-align: center;
 }
 
 .menu-group-title-bar {
   margin-top: var(--space-6);
+}
+
+/* Cabeçalho da seção Cardápio: título e busca centralizados no layout da
+   seção (decisão de 2026-09-04, rodada 6), em todos os breakpoints. */
+#cardapio .container > #cardapioTitle,
+#cardapio .container > .section-note {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cardapio .container > .section-note {
+  max-width: 60ch;
 }
 
 /* Sobre */
@@ -732,7 +746,8 @@ input:focus-visible {
   flex-wrap: wrap;
   gap: var(--space-2);
   align-items: center;
-  margin: var(--space-3) 0;
+  justify-content: center;
+  margin: var(--space-3) auto;
   max-width: 40rem;
 }
 
@@ -767,6 +782,7 @@ input:focus-visible {
 
 .menu-no-results {
   font-style: italic;
+  text-align: center;
 }
 
 .menu-no-results[hidden] {
@@ -777,6 +793,7 @@ input:focus-visible {
 .menu-tabs {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-1);
   border-bottom: 2px solid var(--color-border);
   margin-bottom: var(--space-3);
@@ -799,6 +816,13 @@ input:focus-visible {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-tab {
+    transition: none;
+  }
 }
 
 .menu-tab:hover {
@@ -806,11 +830,12 @@ input:focus-visible {
 }
 
 .menu-tab[aria-selected="true"] {
-  color: var(--color-text);
+  color: var(--color-link);
   border-color: var(--color-border);
   border-bottom-color: var(--color-surface);
   background: var(--color-surface);
   margin-bottom: -2px;
+  font-weight: 600;
 }
 
 /* Categorias (accordion nativo, base sem JS) */
@@ -878,8 +903,12 @@ input:focus-visible {
   display: none;
 }
 
+.menu-category[open] > summary {
+  color: var(--color-link);
+}
+
 .menu-category-body {
-  padding: 0 var(--space-1) var(--space-3);
+  padding: var(--space-2) var(--space-1) var(--space-4);
 }
 
 .menu-category-note {
@@ -908,6 +937,25 @@ input:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-item {
+    transition: none;
+  }
+}
+
+.menu-item:hover,
+.menu-item:focus-within {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .menu-item:hover,
+  .menu-item:focus-within {
+    transform: translateY(-2px);
+  }
 }
 
 .menu-item[hidden] {
@@ -929,19 +977,21 @@ input:focus-visible {
   border-radius: 0;
 }
 
-.menu-item-media-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px dashed var(--color-border);
-}
-
-.menu-item-media-placeholder-text {
-  font-family: var(--font-section);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-text-secondary);
+/* Itens sem correspondência confiável de foto (ver docs/briefing.md e o
+   relatório de curadoria do handoff): em vez do texto "Foto em breve"
+   (estado removido do escopo), o slot de mídia mostra um padrão decorativo
+   discreto, na paleta do tema, sem alegar ser uma foto do prato. */
+.menu-item-media-pattern {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      var(--color-bg-alt),
+      var(--color-bg-alt) 10px,
+      var(--color-surface) 10px,
+      var(--color-surface) 20px
+    );
+  border: 1px solid var(--color-border);
+  opacity: 0.6;
 }
 
 .menu-item-name {
@@ -1208,4 +1258,65 @@ input:focus-visible {
 
 .footer-bottom {
   padding-bottom: var(--space-3);
+}
+
+/* Botão flutuante de WhatsApp (decidido em 2026-09-04, rodada 6): fixo no
+   canto inferior direito, oculto enquanto a seção Hero está visível e
+   revelado depois que o usuário rola além dela — controlado por
+   setupWhatsappFloat() em js/main.js via IntersectionObserver, com
+   graceful degradation (ver comentário no JS). CTA adicional aos outros 4
+   já existentes no site, mesmo link/número/mensagem fixos. */
+/* Estado base (sem JS, ou JS/IntersectionObserver indisponível): o botão
+   fica visível — estado "padrão seguro" citado no briefing, já que sem JS
+   não há como saber se o Hero está na tela. Com JS, setupWhatsappFloat()
+   adiciona a classe .is-hidden-hero enquanto a seção Hero estiver visível,
+   e a remove ao rolar além dela — mesmo padrão de progressive enhancement
+   já usado em setupMenuReveal()/setupHeroEntrance(). */
+.whatsapp-float {
+  position: fixed;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float {
+    transition: opacity 0.01s linear;
+  }
+}
+
+.whatsapp-float.is-hidden-hero {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  background: var(--color-accent-strong);
+}
+
+.whatsapp-float:focus-visible {
+  outline: 3px solid var(--color-link);
+  outline-offset: 3px;
+}
+
+.whatsapp-float-icon {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
 }

@@ -521,6 +521,37 @@
     observer.observe(section);
   }
 
+  // Botão flutuante de WhatsApp: oculto enquanto a seção Hero está visível,
+  // exibido depois que o usuário rola além dela (ver docs/briefing.md,
+  // rodada 6). Estado base em CSS (.whatsapp-float, sem a classe
+  // .is-hidden-hero) já mostra o botão visível — "estado padrão seguro"
+  // para quando não há JS ou não há suporte a IntersectionObserver, já que
+  // nesses casos não há como saber se o Hero está na tela. Com suporte,
+  // esta função adiciona/remove .is-hidden-hero conforme a visibilidade do
+  // Hero, no mesmo padrão de graceful degradation de setupSobreVideo().
+  function setupWhatsappFloat() {
+    var hero = document.getElementById('inicio');
+    var button = document.getElementById('whatsappFloat');
+    if (!hero || !button) return;
+
+    if (typeof window.IntersectionObserver === 'undefined') {
+      // Sem suporte a IntersectionObserver: mantém o estado padrão seguro
+      // definido em CSS (botão sempre visível), em vez de tentar controlar
+      // a exibição sem um mecanismo confiável de detecção de scroll.
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          button.classList.toggle('is-hidden-hero', entry.isIntersecting);
+        });
+      },
+      { threshold: 0 }
+    );
+    observer.observe(hero);
+  }
+
   function setupGalleryCarousel() {
     var section = document.getElementById('galeria');
     var carousel = document.getElementById('galleryCarousel');
@@ -650,5 +681,6 @@
     safeSetup(setupMenu);
     safeSetup(setupSobreVideo);
     safeSetup(setupGalleryCarousel);
+    safeSetup(setupWhatsappFloat);
   });
 })();
