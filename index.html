@@ -1,0 +1,1824 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Empório Parrilla — Restaurante e Parrilla em Lavras-MG</title>
+  <meta name="description" content="Empório Parrilla, em Lavras-MG: churrasco self-service na parrilla, cardápio à la carte completo, massas, carta de vinhos e drinks. Proposta de site demonstrativo.">
+  <meta name="theme-color" content="#F5F2EC" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lora:ital,wght@0,400;0,600;1,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo/logo-primaria.jpeg">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <p class="demo-banner" role="note">
+    Proposta de site demonstrativo
+  </p>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio">
+        <img class="brand-logo" src="assets/logo/logo-primaria.jpeg" alt="Logotipo do Empório Parrilla" width="56" height="56">
+        <span class="brand-name">Empório Parrilla</span>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button
+        type="button"
+        id="themeToggle"
+        class="theme-toggle"
+        role="switch"
+        aria-checked="false"
+      >
+        <span class="theme-toggle-icon" aria-hidden="true">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 4a1 1 0 0 1-1-1V1a1 1 0 0 1 2 0v2a1 1 0 0 1-1 1Zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1ZM4 13H2a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Zm18 0h-2a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2ZM5.64 6.34a1 1 0 0 1-1.41 0L2.82 4.93a1 1 0 1 1 1.41-1.41L5.64 4.93a1 1 0 0 1 0 1.41Zm12.73 12.73a1 1 0 0 1-1.41 0l-1.41-1.41a1 1 0 0 1 1.41-1.41l1.41 1.41a1 1 0 0 1 0 1.41ZM18.36 6.34a1 1 0 0 1 0-1.41l1.41-1.41a1 1 0 1 1 1.41 1.41l-1.41 1.41a1 1 0 0 1-1.41 0ZM5.64 17.66a1 1 0 0 1 0 1.41l-1.41 1.41a1 1 0 1 1-1.41-1.41l1.41-1.41a1 1 0 0 1 1.41 0ZM12 7a5 5 0 1 1-5 5 5 5 0 0 1 5-5Z"/></svg>
+        </span>
+        <span class="theme-toggle-label">Modo escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section id="inicio" class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <!--
+          Vídeo do hero temporariamente desativado a pedido do cliente: o
+          arquivo assets/video/hero.mp4 será reajustado numa rodada futura.
+          A <source> abaixo foi comentada de propósito (não apagada) para
+          que o <video> fique sem fonte válida: sem <source>, o navegador
+          não faz requisição nem tenta decodificar nada, então o atributo
+          poster="assets/img/hero.jpeg" permanece visível como imagem
+          estática de fundo, sem erro de console. Para reativar o vídeo,
+          basta descomentar a linha <source> abaixo.
+        -->
+        <video
+          id="heroVideo"
+          class="hero-video"
+          poster="assets/img/hero.jpeg"
+          muted
+          loop
+          playsinline
+          autoplay
+          preload="metadata"
+        >
+          <!-- <source src="assets/video/hero.mp4" type="video/mp4"> -->
+        </video>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container hero-inner">
+        <h1>
+          <img
+            class="hero-logo"
+            src="assets/logo/logo-fundo-transparente.png"
+            alt=""
+            width="1254"
+            height="1254"
+          >
+          <span class="hero-brand">Empório Parrilla</span>
+        </h1>
+        <p class="hero-subtitle">
+          Churrasco self-service na parrilla e serviço à la carte completo, com entradas,
+          massas, pratos executivos, carta de vinhos e drinks. Um ambiente para famílias,
+          casais e encontros corporativos.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://wa.me/5535997493378?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Emp%C3%B3rio%20Parrilla%20e%20fazer%20uma%20reserva." target="_blank" rel="noopener noreferrer">
+            Falar no WhatsApp
+          </a>
+          <a class="button button-secondary" href="#cardapio">Ver cardápio</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container sobre-grid">
+        <div class="sobre-texto">
+          <h2>Sobre o Empório Parrilla</h2>
+          <p>
+            O Empório Parrilla é um restaurante e churrascaria em Lavras-MG, com um conceito
+            próprio de churrasco: self-service na parrilla. O cliente escolhe o corte direto
+            no freezer, já etiquetado com peso e valor, e pode levar para casa pelo valor da
+            etiqueta ou pedir para grelhar na hora. Além da parrilla, o cardápio à la carte
+            reúne entradas, massas, pratos executivos, arrozes, saladas, sobremesas e uma
+            carta completa de vinhos e drinks. É um ambiente pensado tanto para famílias e
+            casais quanto para encontros corporativos.
+          </p>
+          <ul class="info-list">
+            <li>
+              <span class="info-label">Endereço</span>
+              <span>Rua Comendador José Esteves, 272 — Bairro dos Ipês, Lavras-MG</span>
+            </li>
+            <li>
+              <span class="info-label">Almoço</span>
+              <span>Segunda a sexta, 11h–14h · Sábado e domingo, 11h–15h</span>
+            </li>
+            <li>
+              <span class="info-label">Jantar</span>
+              <span>Segunda, 18h–22h · Terça a sábado, 18h–23h · Domingo fechado</span>
+            </li>
+            <li>
+              <span class="info-label">Diferencial</span>
+              <span>Estacionamento exclusivo</span>
+            </li>
+            <li>
+              <span class="info-label">Instagram</span>
+              <span><a href="https://www.instagram.com/emporioparrillalavras" target="_blank" rel="noopener noreferrer">@emporioparrillalavras</a></span>
+            </li>
+          </ul>
+        </div>
+        <video
+          id="sobreVideo"
+          class="sobre-imagem sobre-video"
+          poster="assets/img/ambiente-salao-cheio.jpg"
+          muted
+          loop
+          playsinline
+          preload="none"
+          aria-hidden="true"
+        >
+          <source src="assets/video/video01.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <section id="cardapio" class="section section-alt">
+      <div class="container">
+        <h2 id="cardapioTitle" tabindex="-1">Cardápio</h2>
+        <p class="section-note">
+          Cardápio completo, organizado por categoria. Use a busca para encontrar um prato
+          ou bebida específico, ou navegue pelas categorias abaixo.
+        </p>
+
+        <div class="menu-search">
+          <label for="menuSearch" class="visually-hidden">Buscar prato ou bebida no cardápio</label>
+          <input type="search" id="menuSearch" class="menu-search-input" placeholder="Buscar prato ou bebida (ex.: picanha, vinho, sobremesa)" autocomplete="off">
+          <button type="button" id="menuSearchClear" class="menu-search-clear" hidden>Limpar busca</button>
+        </div>
+        <p id="menuNoResults" class="menu-no-results" role="status" aria-live="polite" hidden>
+          Nenhum item encontrado para a busca.
+        </p>
+
+        <h3 class="menu-group-title">Comida</h3>
+        <div id="menuTabs" class="menu-tabs" hidden></div>
+        <div id="menuCategories" class="menu-categories">
+          <details class="menu-category" id="cat-entradas" open>
+            <summary>Entradas</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Burrata de Búfala</h4>
+                <p class="menu-item-price">R$ 57,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Bolinho de Costela <span class="menu-item-note">(6 un.)</span></h4>
+                <p class="menu-item-price">R$ 35,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Bolinho de Bacalhau <span class="menu-item-note">(10 un.)</span></h4>
+                <p class="menu-item-price">R$ 50,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Queijo Coalho Grelhado com Mel <span class="menu-item-note">(unidade)</span></h4>
+                <p class="menu-item-price">R$ 12,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Provoleta Grelhada</h4>
+                <p class="menu-item-desc">Acréscimo de tomate seco: +R$ 8,00</p>
+                <p class="menu-item-price">R$ 46,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Choripán na Chapa</h4>
+                <p class="menu-item-price">R$ 27,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Chapa de Legumes</h4>
+                <p class="menu-item-price">R$ 34,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Pão de Alho</h4>
+                <p class="menu-item-price">R$ 13,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Pão de Alho Especial</h4>
+                <p class="menu-item-price">R$ 22,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Pastéis com Molho de Queijo <span class="menu-item-note">(6 un.)</span></h4>
+                <p class="menu-item-price">R$ 32,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Queijo Brie Empanado</h4>
+                <p class="menu-item-price">R$ 58,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-batatas">
+            <summary>Batatas</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Batata Frita</h4>
+                <p class="menu-item-price">R$ 24,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Batata Frita com Parmesão</h4>
+                <p class="menu-item-price">R$ 27,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Batata Rústica</h4>
+                <p class="menu-item-price">R$ 26,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Batata Confit</h4>
+                <p class="menu-item-price">R$ 24,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category menu-category-info" id="cat-churrasco-parrilla">
+            <summary>Churrasco na Parrilla</summary>
+            <div class="menu-category-body">
+              <p>Conceito self-service: o cliente escolhe o corte direto no freezer, já etiquetado com peso e valor, podendo levar para casa pelo valor da etiqueta ou pedir para grelhar na hora.</p>
+              <p class="menu-category-note">Grelhar na hora tem acréscimo de 45% sobre o valor da etiqueta. Não há lista fixa de preços por corte: o valor varia por peça e peso.</p>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-massas">
+            <summary>Massas</summary>
+            <div class="menu-category-body">
+              <p class="menu-category-note">Molhos à escolha: Pomodoro, Bechamel com Queijo, Pesto Cremoso ou Gorgonzola.</p>
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Ravioli de Ricota com Damasco</h4>
+                <p class="menu-item-price">R$ 47,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Capeletti de Queijo</h4>
+                <p class="menu-item-price">R$ 47,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Nhoque de Batata</h4>
+                <p class="menu-item-price">R$ 47,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Fetuccine</h4>
+                <p class="menu-item-price">R$ 29,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Fetuccine com Rúcula e Tomate Seco</h4>
+                <p class="menu-item-price">R$ 33,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Fetuccine ao Molho de Camarão</h4>
+                <p class="menu-item-price">R$ 65,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-arrozes">
+            <summary>Arrozes</summary>
+            <div class="menu-category-body">
+              <p class="menu-category-note">Porção para 2 pessoas.</p>
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz Branco</h4>
+                <p class="menu-item-price">R$ 19,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz com Alho</h4>
+                <p class="menu-item-price">R$ 25,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz Parrilla</h4>
+                <p class="menu-item-price">R$ 30,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz de Camarão</h4>
+                <p class="menu-item-price">R$ 65,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz à Piamontese</h4>
+                <p class="menu-item-price">R$ 32,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz do Chef</h4>
+                <p class="menu-item-price">R$ 32,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz Caprese</h4>
+                <p class="menu-item-price">R$ 32,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz com Tomate Seco e Rúcula</h4>
+                <p class="menu-item-price">R$ 32,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-saladas">
+            <summary>Saladas</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Salada Blue Cheese</h4>
+                <p class="menu-item-price">R$ 36,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Salada Tropical</h4>
+                <p class="menu-item-price">R$ 33,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-complementos">
+            <summary>Complementos</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Farofa da Casa</h4>
+                <p class="menu-item-price">R$ 7,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Vinagrete de Abacaxi</h4>
+                <p class="menu-item-price">R$ 7,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Queijo Gruyère Derretido na Racleteira</h4>
+                <p class="menu-item-price">R$ 29,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-molhos-extras">
+            <summary>Molhos Extras</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Molho Defumado Especial</h4>
+                <p class="menu-item-price">R$ 7,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Molho Chimichurri</h4>
+                <p class="menu-item-price">R$ 8,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Geleia de Abacaxi com Pimenta</h4>
+                <p class="menu-item-price">R$ 8,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Creme de Queijo</h4>
+                <p class="menu-item-price">R$ 22,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-sobremesas">
+            <summary>Sobremesas</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Petit Gâteau</h4>
+                <p class="menu-item-price">R$ 26,90</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Brownie com Sorvete</h4>
+                <p class="menu-item-price">R$ 25,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Medalhão de Romeu e Julieta com Sorvete</h4>
+                <p class="menu-item-price">R$ 27,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Pudim</h4>
+                <p class="menu-item-price">R$ 17,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Cheese Cake</h4>
+                <p class="menu-item-price">R$ 27,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-executivos">
+            <summary>Executivos</summary>
+            <div class="menu-category-body">
+              <p class="menu-category-note">Servido de segunda a sábado, no horário de almoço.</p>
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Parrilla</h4>
+                <p class="menu-item-price">R$ 37,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Parrilla Barbecue</h4>
+                <p class="menu-item-price">R$ 29,50</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Parmegiana de Frango</h4>
+                <p class="menu-item-price">R$ 37,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Parmegiana Bovina</h4>
+                <p class="menu-item-price">R$ 48,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz de Camarão</h4>
+                <p class="menu-item-price">R$ 55,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Fetuccine</h4>
+                <p class="menu-item-price">R$ 38,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Fetuccine com Rúcula e Tomate Seco</h4>
+                <p class="menu-item-price">R$ 42,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Fetuccine de Camarão</h4>
+                <p class="menu-item-price">R$ 55,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Filé de Tilápia Grelhado</h4>
+                <p class="menu-item-price">R$ 44,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Salmão Grelhado ao Molho de Maracujá</h4>
+                <p class="menu-item-price">R$ 49,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Vegano</h4>
+                <p class="menu-item-price">R$ 38,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Kids</h4>
+                <p class="menu-item-price">R$ 21,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-monte-seu-prato">
+            <summary>Monte Seu Prato</summary>
+            <div class="menu-category-body">
+              <p class="menu-category-note">Montagem em 4 etapas: escolha 1 proteína, 1 complemento, 1 acompanhamento e 1 salada, sem custo adicional pela escolha. Preço conforme a proteína escolhida.</p>
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Ancho Grelhado</h4>
+                <p class="menu-item-price">R$ 40,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Picanha Grelhada</h4>
+                <p class="menu-item-price">R$ 54,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Filé de Tilápia Grelhado</h4>
+                <p class="menu-item-price">R$ 45,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Copa Lombo ao Barbecue</h4>
+                <p class="menu-item-price">R$ 36,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Salmão Grelhado</h4>
+                <p class="menu-item-price">R$ 54,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Filé de Sobrecoxa de Frango</h4>
+                <p class="menu-item-price">R$ 36,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Filé de Frango Empanado</h4>
+                <p class="menu-item-price">R$ 36,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Shimeji no Shoyo</h4>
+                <p class="menu-item-price">R$ 38,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-steak-salada">
+            <summary>Steak Salada</summary>
+            <div class="menu-category-body">
+              <p class="menu-category-note">Acompanha salada da casa.</p>
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Ancho Grelhado</h4>
+                <p class="menu-item-price">R$ 34,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Picanha Grelhada</h4>
+                <p class="menu-item-price">R$ 48,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Filé de Tilápia</h4>
+                <p class="menu-item-price">R$ 35,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Copa Lombo ao Barbecue</h4>
+                <p class="menu-item-price">R$ 27,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Salmão Grelhado</h4>
+                <p class="menu-item-price">R$ 44,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Filé de Frango à Parmegiana</h4>
+                <p class="menu-item-price">R$ 30,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Filé de Sobrecoxa de Frango</h4>
+                <p class="menu-item-price">R$ 28,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Filé de Frango Empanado</h4>
+                <p class="menu-item-price">R$ 26,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-proteinas-avulsas">
+            <summary>Proteínas Avulsas</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Ancho Grelhado</h4>
+                <p class="menu-item-price">R$ 24,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Picanha Grelhada</h4>
+                <p class="menu-item-price">R$ 38,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Filé de Tilápia</h4>
+                <p class="menu-item-price">R$ 25,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Copa Lombo ao Barbecue</h4>
+                <p class="menu-item-price">R$ 19,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Salmão Grelhado</h4>
+                <p class="menu-item-price">R$ 35,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Filé de Frango à Parmegiana</h4>
+                <p class="menu-item-price">R$ 24,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Filé de Sobrecoxa de Frango</h4>
+                <p class="menu-item-price">R$ 19,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Filé de Frango Empanado</h4>
+                <p class="menu-item-price">R$ 16,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-adicionais-guarnicoes">
+            <summary>Adicionais e Guarnições</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz</h4>
+                <p class="menu-item-price">R$ 17,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz ao Alho</h4>
+                <p class="menu-item-price">R$ 17,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz à Piamontese</h4>
+                <p class="menu-item-price">R$ 18,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz Parrilla</h4>
+                <p class="menu-item-price">R$ 18,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz de Cogumelos</h4>
+                <p class="menu-item-price">R$ 18,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz Caprese</h4>
+                <p class="menu-item-price">R$ 18,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Arroz Cremoso de Brócolis</h4>
+                <p class="menu-item-price">R$ 18,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Fetuccine Rúcula e Tomate Seco</h4>
+                <p class="menu-item-price">R$ 30,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Fetuccine ao Molho Branco</h4>
+                <p class="menu-item-price">R$ 27,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Feijão</h4>
+                <p class="menu-item-price">R$ 3,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Batata Frita</h4>
+                <p class="menu-item-price">R$ 12,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Batata Rústica</h4>
+                <p class="menu-item-price">R$ 13,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Legumes Confit</h4>
+                <p class="menu-item-price">R$ 10,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Maionese de Batata</h4>
+                <p class="menu-item-price">R$ 11,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Vinagrete de Abacaxi</h4>
+                <p class="menu-item-price">R$ 7,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Salada</h4>
+                <p class="menu-item-price">R$ 15,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Farofa da Casa</h4>
+                <p class="menu-item-price">R$ 7,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <h3 class="menu-group-title menu-group-title-bar">Bar &amp; Bebidas</h3>
+        <p class="section-note">Cervejas, vinhos, drinks, doses e sucos, reunidos à parte da comida.</p>
+        <div id="barCategories" class="menu-categories menu-categories-bar">
+          <details class="menu-category" id="cat-bebidas">
+            <summary>Bebidas</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Água Mineral</h4>
+                <p class="menu-item-price">R$ 5,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Água com Gás</h4>
+                <p class="menu-item-price">R$ 5,50</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Água Mamba Water com Gás</h4>
+                <p class="menu-item-price">R$ 6,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Água Tônica</h4>
+                <p class="menu-item-price">R$ 8,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">H2OH!</h4>
+                <p class="menu-item-price">R$ 9,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Refrigerante Lata</h4>
+                <p class="menu-item-price">R$ 6,50</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Soda Limonada</h4>
+                <p class="menu-item-price">R$ 6,50</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Energético Red Bull</h4>
+                <p class="menu-item-price">R$ 16,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-sucos-naturais">
+            <summary>Sucos Naturais</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Maracujá</h4>
+                <p class="menu-item-price">R$ 12,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Morango</h4>
+                <p class="menu-item-price">R$ 12,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Abacaxi</h4>
+                <p class="menu-item-price">R$ 11,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Limão</h4>
+                <p class="menu-item-price">R$ 10,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media">
+                  <img src="assets/img/bebida-suco-laranja-detalhe.jpg" alt="Suco de laranja natural do Empório Parrilla" width="360" height="240" loading="lazy">
+                </div>
+                <h4 class="menu-item-name">Laranja</h4>
+                <p class="menu-item-price">R$ 11,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Misto</h4>
+                <p class="menu-item-price">R$ 15,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Uva</h4>
+                <p class="menu-item-price">R$ 10,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-cervejas-classicas">
+            <summary>Cervejas Clássicas</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Heineken <span class="menu-item-note">(garrafa 600ml)</span></h4>
+                <p class="menu-item-price">R$ 19,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Original <span class="menu-item-note">(garrafa 600ml)</span></h4>
+                <p class="menu-item-price">R$ 16,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Blue Moon <span class="menu-item-note">(long neck)</span></h4>
+                <p class="menu-item-price">R$ 20,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Heineken <span class="menu-item-note">(long neck)</span></h4>
+                <p class="menu-item-price">R$ 13,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Heineken 0.0% <span class="menu-item-note">(long neck)</span></h4>
+                <p class="menu-item-price">R$ 13,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Corona <span class="menu-item-note">(long neck)</span></h4>
+                <p class="menu-item-price">R$ 12,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Corona Cero <span class="menu-item-note">(long neck)</span></h4>
+                <p class="menu-item-price">R$ 12,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Stella Artois Pure Gold <span class="menu-item-note">(long neck)</span></h4>
+                <p class="menu-item-price">R$ 13,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Laut de Leve <span class="menu-item-note">(long neck)</span></h4>
+                <p class="menu-item-price">R$ 11,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Heineken <span class="menu-item-note">(chopp)</span></h4>
+                <p class="menu-item-price">R$ 11,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Laut <span class="menu-item-note">(chopp)</span></h4>
+                <p class="menu-item-price">R$ 10,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Chope de Vinho <span class="menu-item-note">(chopp)</span></h4>
+                <p class="menu-item-price">R$ 17,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-cervejas-artesanais">
+            <summary>Cervejas Artesanais</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Amber Lager <span class="menu-item-note">(Joia Mesquita 600ml)</span></h4>
+                <p class="menu-item-price">R$ 32,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Premium Lager <span class="menu-item-note">(Joia Mesquita 600ml)</span></h4>
+                <p class="menu-item-price">R$ 32,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Trigo <span class="menu-item-note">(Joia Mesquita 600ml)</span></h4>
+                <p class="menu-item-price">R$ 32,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Trigo Escura <span class="menu-item-note">(Joia Mesquita 600ml)</span></h4>
+                <p class="menu-item-price">R$ 33,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">APA <span class="menu-item-note">(Joia Mesquita 600ml)</span></h4>
+                <p class="menu-item-price">R$ 33,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Session IPA <span class="menu-item-note">(Joia Mesquita 600ml)</span></h4>
+                <p class="menu-item-price">R$ 33,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">IPA <span class="menu-item-note">(Joia Mesquita 600ml)</span></h4>
+                <p class="menu-item-price">R$ 35,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Red Ale <span class="menu-item-note">(Joia Mesquita 600ml)</span></h4>
+                <p class="menu-item-price">R$ 32,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Crystal <span class="menu-item-note">(Baden Baden 600ml)</span></h4>
+                <p class="menu-item-price">R$ 30,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Witbier <span class="menu-item-note">(Baden Baden 600ml)</span></h4>
+                <p class="menu-item-price">R$ 30,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Golden <span class="menu-item-note">(Baden Baden 600ml)</span></h4>
+                <p class="menu-item-price">R$ 30,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Laut de Leve <span class="menu-item-note">(Laut 600ml)</span></h4>
+                <p class="menu-item-price">R$ 19,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Laut Session IPA <span class="menu-item-note">(Laut 600ml)</span></h4>
+                <p class="menu-item-price">R$ 24,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-caipis">
+            <summary>Caipis</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Caipirinha</h4>
+                <p class="menu-item-price">R$ 18,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Caipiroska Smirnoff</h4>
+                <p class="menu-item-price">R$ 23,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Caipiroska Absolut</h4>
+                <p class="menu-item-price">R$ 28,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-drinks">
+            <summary>Drinks</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Garibaldi</h4>
+                <p class="menu-item-price">R$ 24,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Mojito Cubano</h4>
+                <p class="menu-item-price">R$ 24,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Lagoa Azul</h4>
+                <p class="menu-item-price">R$ 26,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Piña Colada</h4>
+                <p class="menu-item-price">R$ 25,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Amarula Passion</h4>
+                <p class="menu-item-price">R$ 29,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Mimosa</h4>
+                <p class="menu-item-price">R$ 29,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Prosecco Spritz</h4>
+                <p class="menu-item-price">R$ 29,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Gin Tônica</h4>
+                <p class="menu-item-price">R$ 33,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Gin Parrilla</h4>
+                <p class="menu-item-price">R$ 30,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Kir Royal</h4>
+                <p class="menu-item-price">R$ 30,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Negroni</h4>
+                <p class="menu-item-price">R$ 34,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Penicilin</h4>
+                <p class="menu-item-price">R$ 33,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-doses">
+            <summary>Doses</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Campari</h4>
+                <p class="menu-item-price">R$ 16,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Amarula</h4>
+                <p class="menu-item-price">R$ 20,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Vodka Absolut</h4>
+                <p class="menu-item-price">R$ 18,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Rum Bacardi</h4>
+                <p class="menu-item-price">R$ 10,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Whisky J.W. Red Label</h4>
+                <p class="menu-item-price">R$ 18,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Whisky Chivas Regal</h4>
+                <p class="menu-item-price">R$ 25,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Cachaça</h4>
+                <p class="menu-item-price">R$ 6,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-drinks-sem-alcool">
+            <summary>Drinks Sem Álcool</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Soda Italiana</h4>
+                <p class="menu-item-price">R$ 20,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Mocktail Morango</h4>
+                <p class="menu-item-price">R$ 25,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Parrillinha Kids</h4>
+                <p class="menu-item-price">R$ 26,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-vinhos-tintos">
+            <summary>Vinhos Tintos</summary>
+            <div class="menu-category-body">
+              <p class="menu-category-note">Taxa de rolha: R$ 60,00 (garrafas trazidas pelo cliente).</p>
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Gato Negro Cabernet Sauvignon</h4>
+                <p class="menu-item-price">R$ 90,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Gato Negro Carmenere</h4>
+                <p class="menu-item-price">R$ 90,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Concha y Toro Cabernet Sauvignon</h4>
+                <p class="menu-item-price">R$ 85,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Concha y Toro Carmenere</h4>
+                <p class="menu-item-price">R$ 85,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Pata Negra Tempranillo</h4>
+                <p class="menu-item-price">R$ 99,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Periquita</h4>
+                <p class="menu-item-price">R$ 123,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Casal Garcia</h4>
+                <p class="menu-item-price">R$ 112,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Altos del Condor Malbec</h4>
+                <p class="menu-item-price">R$ 75,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Pueblo del Sol Pinot Noir</h4>
+                <p class="menu-item-price">R$ 78,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Blason del Valle Bonarda</h4>
+                <p class="menu-item-price">R$ 85,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Citadel Tempranillo</h4>
+                <p class="menu-item-price">R$ 78,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Paine Merlot</h4>
+                <p class="menu-item-price">R$ 78,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Capitán Tomás Malbec Tannat</h4>
+                <p class="menu-item-price">R$ 94,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">V9 Reservado</h4>
+                <p class="menu-item-price">R$ 85,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Épica 23</h4>
+                <p class="menu-item-price">R$ 92,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Pueblo del Sol Cabernet Sauvignon</h4>
+                <p class="menu-item-price">R$ 78,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Taça de Vinho Tinto</h4>
+                <p class="menu-item-price">R$ 26,90</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-vinhos-brancos">
+            <summary>Vinhos Brancos</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Gato Negro Chardonnay</h4>
+                <p class="menu-item-price">R$ 90,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Casal Garcia Verde</h4>
+                <p class="menu-item-price">R$ 112,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Ouro do Monte</h4>
+                <p class="menu-item-price">R$ 89,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-vinhos-roses">
+            <summary>Vinhos Rosés</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Ballade Cabernet Sauvignon</h4>
+                <p class="menu-item-price">R$ 75,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Partridge Flying Malbec</h4>
+                <p class="menu-item-price">R$ 85,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Casal Garcia</h4>
+                <p class="menu-item-price">R$ 112,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Bodegazza</h4>
+                <p class="menu-item-price">R$ 86,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+          <details class="menu-category" id="cat-espumantes-frisantes">
+            <summary>Espumantes e Frisantes</summary>
+            <div class="menu-category-body">
+              <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Lambrusco Rosso</h4>
+                <p class="menu-item-price">R$ 83,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Espumante Salton Classic</h4>
+                <p class="menu-item-price">R$ 84,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Espumante Dancing Flame Moscatel</h4>
+                <p class="menu-item-price">R$ 109,00</p>
+              </article>
+              <article class="menu-item">
+                <div class="menu-item-media menu-item-media-placeholder" aria-hidden="true">
+                  <span class="menu-item-media-placeholder-text">Foto em breve</span>
+                </div>
+                <h4 class="menu-item-name">Espumante de Vergy Blanc</h4>
+                <p class="menu-item-price">R$ 109,00</p>
+              </article>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <p class="menu-cta-note">
+          O cardápio acima é apenas para consulta. Para pedidos e reservas, fale conosco pelo
+          WhatsApp.
+        </p>
+        <a class="button button-primary menu-cta-button" href="https://wa.me/5535997493378?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Emp%C3%B3rio%20Parrilla%20e%20fazer%20uma%20reserva." target="_blank" rel="noopener noreferrer">
+          Falar no WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <section id="galeria" class="section">
+      <div class="container">
+        <h2>Galeria</h2>
+        <p class="section-note">Fotos do ambiente, dos pratos e da parrilla do Empório Parrilla.</p>
+      </div>
+
+      <div class="gallery-carousel" id="galleryCarousel">
+        <div class="gallery-track gallery-track-a">
+          <img src="assets/img/picanha-fatiada-chapa-fumegante.jpg" alt="Picanha fatiada fumegante servida na chapa" width="360" height="480" loading="lazy">
+          <img src="assets/img/prato-file-empanado-massa-legumes.jpg" alt="Prato com filé empanado, massa e legumes" width="360" height="480" loading="lazy">
+          <img src="assets/img/ambiente-salao-cheio.jpg" alt="Salão do Empório Parrilla com mesas ocupadas por clientes" width="360" height="480" loading="lazy">
+          <img src="assets/img/carne-fatiada-pao-alho-acompanhamento.jpg" alt="Carne fatiada acompanhada de pão de alho" width="360" height="480" loading="lazy">
+          <img src="assets/img/entrada-queijo-pesto-tomate-cereja.jpg" alt="Entrada de queijo com pesto e tomate cereja" width="360" height="480" loading="lazy">
+          <img src="assets/img/prato-carne-arroz-fritas.jpg" alt="Prato com carne, arroz e batata frita" width="360" height="480" loading="lazy">
+          <img src="assets/img/cardapios-fisicos-empilhados-mesa.jpg" alt="Cardápios físicos do Empório Parrilla empilhados sobre a mesa" width="360" height="480" loading="lazy">
+          <img src="assets/img/prato-carne-tomate-mandioca-grelhados.jpg" alt="Prato de carne com tomate e mandioca grelhados" width="360" height="480" loading="lazy">
+          <img src="assets/img/sobremesa-caramelizada-ambiente.jpg" alt="Sobremesa caramelizada servida no ambiente do restaurante" width="360" height="480" loading="lazy">
+          <img src="assets/img/prato-executivo-arroz-fritas-salao.jpg" alt="Prato executivo com arroz e batata frita no salão do restaurante" width="360" height="480" loading="lazy">
+        </div>
+        <div class="gallery-track gallery-track-b">
+          <img src="assets/img/acougue-carnes-nobres-vitrine.jpg" alt="Vitrine de carnes nobres do açougue do Empório Parrilla" width="360" height="480" loading="lazy">
+          <img src="assets/img/prato-carne-farofa-vinagrete-taca-vinho.jpg" alt="Prato de carne com farofa e vinagrete, acompanhado de taça de vinho" width="360" height="480" loading="lazy">
+          <img src="assets/img/carne-na-chapa-parrilla.jpg" alt="Carne grelhada na chapa da parrilla" width="360" height="480" loading="lazy">
+          <img src="assets/img/prato-carne-fritas-pure-berinjela.jpg" alt="Prato de carne com batata frita e purê de berinjela" width="360" height="480" loading="lazy">
+          <img src="assets/img/momento-familia-cliente.jpg" alt="Família reunida à mesa no Empório Parrilla" width="360" height="480" loading="lazy">
+          <img src="assets/img/mesa-farta-peixe-legumes-grelhados.jpg" alt="Mesa farta com peixe e legumes grelhados" width="360" height="480" loading="lazy">
+          <img src="assets/img/bebida-suco-laranja-detalhe.jpg" alt="Detalhe de suco de laranja natural servido no Empório Parrilla" width="360" height="480" loading="lazy">
+          <img src="assets/img/prato-carne-arroz-fritas-ambiente-externo.jpg" alt="Prato de carne com arroz e batata frita na área externa do restaurante" width="360" height="480" loading="lazy">
+          <img src="assets/img/prato-carne-chope-laut.jpg" alt="Prato de carne acompanhado de chope Laut" width="360" height="480" loading="lazy">
+          <img src="assets/img/carne-grelhada-brasa-vermelha.jpg" alt="Carne grelhada sobre brasa vermelha" width="360" height="480" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section section-alt">
+      <div class="container contato-grid">
+        <div>
+          <h2>Contato e reservas</h2>
+          <ul class="info-list">
+            <li>
+              <span class="info-label">Endereço</span>
+              <span>Rua Comendador José Esteves, 272 — Bairro dos Ipês, Lavras-MG</span>
+            </li>
+            <li>
+              <span class="info-label">Almoço</span>
+              <span>Segunda a sexta, 11h–14h · Sábado e domingo, 11h–15h</span>
+            </li>
+            <li>
+              <span class="info-label">Jantar</span>
+              <span>Segunda, 18h–22h · Terça a sábado, 18h–23h · Domingo fechado</span>
+            </li>
+            <li>
+              <span class="info-label">Instagram</span>
+              <span><a href="https://www.instagram.com/emporioparrillalavras" target="_blank" rel="noopener noreferrer">@emporioparrillalavras</a></span>
+            </li>
+          </ul>
+        </div>
+        <div class="contato-cta">
+          <p>Fale com o Empório Parrilla e faça sua reserva pelo WhatsApp:</p>
+          <a
+            class="button button-primary"
+            href="https://wa.me/5535997493378?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Emp%C3%B3rio%20Parrilla%20e%20fazer%20uma%20reserva."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            +55 35 99749-3378
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-col-brand">
+        <img class="footer-logo" src="assets/logo/logo-primaria.jpeg" alt="Empório Parrilla" width="48" height="48" loading="lazy">
+        <p class="footer-brand-name">Empório Parrilla</p>
+        <p class="footer-brand-desc">Restaurante e churrascaria em Lavras-MG.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col-title">Endereço e contato</h3>
+        <address class="footer-address">
+          Rua Comendador José Esteves, 272<br>
+          Bairro dos Ipês, Lavras-MG
+        </address>
+        <p><a href="https://wa.me/5535997493378?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Emp%C3%B3rio%20Parrilla%20e%20fazer%20uma%20reserva." target="_blank" rel="noopener noreferrer">+55 35 99749-3378</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col-title">Redes sociais</h3>
+        <a class="footer-social-link" href="https://www.instagram.com/emporioparrillalavras" target="_blank" rel="noopener noreferrer">
+          <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"></rect>
+            <circle cx="12" cy="12" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+            <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"></circle>
+          </svg>
+          <span class="visually-hidden">Instagram do Empório Parrilla</span>
+          <span aria-hidden="true">@emporioparrillalavras</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-legal">
+      <p>Bebida alcoólica servida somente para maiores de 18 anos. Ambiente livre de fumo. Taxa de serviço de 10%. Pode haver couvert artístico em dias com música ao vivo. Em caso de alergias ou intolerâncias alimentares, avise a equipe. Os pratos levam de 20 a 50 minutos de preparo.</p>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="demo-banner demo-banner-footer" role="note">Proposta de site demonstrativo</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

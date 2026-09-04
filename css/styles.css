@@ -1,0 +1,1043 @@
+/* Empório Parrilla — landing page real
+   Tokens e paleta derivados de docs/design-system.md (estado ready). */
+
+:root {
+  /* Modo claro (padrão) */
+  --color-bg: #F5F2EC;
+  --color-bg-alt: #EDE7DA;
+  --color-surface: #FFFDF8;
+  --color-text: #3D2E26;
+  --color-text-secondary: #6B5B4F;
+  --color-accent: #C9A662;
+  --color-accent-strong: #B08F4E;
+  /* Tom mais escuro do dourado, usado apenas em texto (links, preços, rótulos)
+     para atingir contraste AA sobre o fundo claro; --color-accent/-strong
+     seguem reservados para botões e bordas, conforme docs/design-system.md. */
+  --color-link: #7A5D28;
+  --color-border: #3D2E26;
+  --color-on-accent: #241A13;
+
+  --font-display: "Abril Fatface", Georgia, "Times New Roman", serif;
+  --font-body: "Lora", Georgia, "Times New Roman", serif;
+  --font-section: "Oswald", Arial, Helvetica, sans-serif;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+
+  --max-width: 1180px;
+  --radius: 6px;
+  --header-offset: 92px;
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --color-bg: #141210;
+  --color-bg-alt: #1C1815;
+  --color-surface: #1F1B17;
+  --color-text: #EFE7D8;
+  --color-text-secondary: #B8A98F;
+  --color-accent: #D9B65C;
+  --color-accent-strong: #E8C879;
+  --color-border: #4A3B31;
+  --color-on-accent: #201A10;
+  --color-link: #E8C879;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1, h2 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+h3, h4 {
+  font-family: var(--font-section);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  margin: 0 0 var(--space-2);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin: 0 0 var(--space-3);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  margin: var(--space-5) 0 var(--space-2);
+}
+
+h4 {
+  font-size: 1rem;
+  margin: 0 0 var(--space-1);
+  letter-spacing: 0.01em;
+}
+
+p {
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-2);
+  max-width: 70ch;
+}
+
+a {
+  color: var(--color-link);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img, video {
+  border-radius: var(--radius);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+  min-width: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  padding: var(--space-1) var(--space-2);
+  border-radius: 0 0 var(--radius) 0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--color-link);
+  outline-offset: 2px;
+}
+
+/* Título do cardápio recebe foco por script ao ser revelado (ver
+   setupMenuReveal em js/main.js); precisa de indicação visível mesmo sem
+   :focus-visible, já que o foco é definido via JavaScript. */
+#cardapioTitle:focus {
+  outline: 3px solid var(--color-link);
+  outline-offset: 4px;
+}
+
+/* Aviso de demonstração */
+.demo-banner {
+  margin: 0;
+  text-align: center;
+  background: var(--color-border);
+  color: var(--color-bg);
+  font-family: var(--font-section);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-2);
+}
+
+.demo-banner-footer {
+  margin-top: var(--space-2);
+  background: transparent;
+  color: var(--color-text-secondary);
+  text-align: left;
+  font-weight: 500;
+  padding: 0;
+}
+
+/* Header */
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 2px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--color-text);
+  min-width: 0;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  white-space: nowrap;
+}
+
+nav[aria-label="Navegação principal"] {
+  min-width: 0;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  font-family: var(--font-section);
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: var(--space-1);
+  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--color-text);
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 44px;
+  padding: var(--space-1) var(--space-2);
+  background: transparent;
+  border: 2px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text);
+  font-family: var(--font-section);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: var(--color-bg-alt);
+}
+
+.theme-toggle-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+}
+
+.theme-toggle-icon .icon-sun {
+  display: none;
+}
+
+.theme-toggle[aria-checked="true"] .icon-moon {
+  display: none;
+}
+
+.theme-toggle[aria-checked="true"] .icon-sun {
+  display: block;
+}
+
+/* Hero */
+/* min-height: 70vh é o estado final/estático (progressive enhancement) —
+   o que é exibido sem JS e com prefers-reduced-motion. Com GSAP disponível
+   e sem preferência de movimento reduzido, setupHeroEntrance() (js/main.js)
+   expande a seção para 100vh no início da timeline de entrada, mantém
+   100vh durante todo o zoom da logo/clareamento do overlay/cascata do
+   texto, e só então anima de volta para 70vh — nunca deixando a seção
+   presa em 100vh nem partindo de 80vh/70vh antes da entrada terminar. */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-alt);
+  padding: var(--space-6) 0;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  scroll-margin-top: var(--header-offset);
+  color: #F5F2EC;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+  display: block;
+}
+
+/* Camada de contraste sobre o vídeo/imagem de fundo, para legibilidade do
+   texto do hero independentemente do brilho da cena filmada. Elemento real
+   (não ::after) para permitir animação de opacidade via GSAP na entrada do
+   Hero (ver setupHeroEntrance em js/main.js). O valor de opacity abaixo é o
+   estado padrão/final; sem JS ou com prefers-reduced-motion, é isso que é
+   exibido diretamente — progressive enhancement. */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 18, 16, 0.6),
+    rgba(20, 18, 16, 0.75)
+  );
+  opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  color: #F5F2EC;
+  margin: 0 0 var(--space-2);
+}
+
+.hero-logo {
+  display: block;
+  width: clamp(140px, 22vw, 220px);
+  height: auto;
+  margin: 0 auto;
+  transform-origin: 50% 50%;
+}
+
+.hero-brand {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  color: #D9B65C;
+  text-align: center;
+  margin-top: var(--space-2);
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  max-width: 56ch;
+  margin: 0 auto var(--space-4);
+  color: #E8DFCF;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+}
+
+.hero .button-secondary {
+  color: #F5F2EC;
+  border-color: #F5F2EC;
+}
+
+.hero .button-secondary:hover,
+.hero .button-secondary:focus-visible {
+  background: rgba(245, 242, 236, 0.12);
+}
+
+/* Sections */
+.section {
+  padding: var(--space-6) 0;
+  scroll-margin-top: var(--header-offset);
+}
+
+.section-alt {
+  background: var(--color-bg-alt);
+}
+
+.section-note {
+  max-width: 60ch;
+}
+
+.menu-group-title {
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--space-1);
+}
+
+.menu-group-title-bar {
+  margin-top: var(--space-6);
+}
+
+/* Sobre */
+.sobre-grid {
+  display: grid;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .sobre-grid {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.sobre-imagem {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+/* Vídeo da seção Sobre: mesmas dimensões/proporção da imagem que
+   substituiu (.sobre-imagem), carregado sob demanda por setupSobreVideo()
+   (js/main.js) via IntersectionObserver, só quando a seção entra em
+   viewport. O atributo poster (assets/img/ambiente-salao-cheio.jpg) é
+   exibido nativamente pelo próprio <video> enquanto nenhum frame foi
+   decodificado — inclusive com prefers-reduced-motion: reduce, quando
+   setupSobreVideo() nunca chega a carregar/tocar o vídeo, então o poster
+   permanece como imagem estática. Por isso, ao contrário do hero-video,
+   este elemento não é escondido via display:none no modo de movimento
+   reduzido: escondê-lo apagaria também o poster, deixando um espaço em
+   branco em vez do fallback estático pedido. */
+.sobre-video {
+  display: block;
+  border-radius: 0;
+  background: var(--color-bg-alt);
+}
+
+.info-list {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.info-list li {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.info-label {
+  font-family: var(--font-section);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-link);
+}
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius);
+  font-family: var(--font-section);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 2px solid var(--color-accent);
+  cursor: pointer;
+}
+
+.button-primary {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+  background: var(--color-accent-strong);
+  border-color: var(--color-accent-strong);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  background: var(--color-bg-alt);
+}
+
+/* Busca do cardápio */
+.menu-search {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  margin: var(--space-3) 0;
+  max-width: 40rem;
+}
+
+.menu-search-input {
+  flex: 1 1 16rem;
+  min-width: 0;
+  min-height: 44px;
+  padding: var(--space-1) var(--space-2);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.menu-search-clear {
+  min-height: 44px;
+  padding: var(--space-1) var(--space-2);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-section);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.menu-search-clear[hidden] {
+  display: none;
+}
+
+.menu-no-results {
+  font-style: italic;
+}
+
+.menu-no-results[hidden] {
+  display: none;
+}
+
+/* Tabs (aprimoramento via JS, desktop) */
+.menu-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-1);
+}
+
+.menu-tabs[hidden] {
+  display: none;
+}
+
+.menu-tab {
+  min-height: 44px;
+  padding: var(--space-1) var(--space-2);
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: var(--radius) var(--radius) 0 0;
+  color: var(--color-text-secondary);
+  font-family: var(--font-section);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.menu-tab:hover {
+  color: var(--color-text);
+}
+
+.menu-tab[aria-selected="true"] {
+  color: var(--color-text);
+  border-color: var(--color-border);
+  border-bottom-color: var(--color-surface);
+  background: var(--color-surface);
+  margin-bottom: -2px;
+}
+
+/* Categorias (accordion nativo, base sem JS) */
+.menu-categories {
+  border-top: 1px solid var(--color-border);
+}
+
+.menu-categories[hidden] {
+  display: none;
+}
+
+.menu-category {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.menu-category[hidden] {
+  display: none;
+}
+
+.menu-category > summary {
+  cursor: pointer;
+  padding: var(--space-2) var(--space-1);
+  font-family: var(--font-section);
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+}
+
+.menu-category > summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu-category > summary::after {
+  content: "+";
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  color: var(--color-link);
+}
+
+.menu-category[open] > summary::after {
+  content: "\2212";
+}
+
+.menu-category > summary:hover,
+.menu-category > summary:focus-visible {
+  background: var(--color-bg-alt);
+}
+
+/* Modo tabs (aprimorado por JS): esconde os "summary" e cada painel */
+.menu-categories.is-tabs-mode {
+  border-top: none;
+}
+
+.menu-categories.is-tabs-mode > .menu-category {
+  border-bottom: none;
+}
+
+.menu-categories.is-tabs-mode > .menu-category > summary {
+  display: none;
+}
+
+.menu-category-body {
+  padding: 0 var(--space-1) var(--space-3);
+}
+
+.menu-category-note {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.menu-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-2);
+  background: var(--color-surface);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.menu-item[hidden] {
+  display: none;
+}
+
+.menu-item-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-bg-alt);
+}
+
+.menu-item-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.menu-item-media-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--color-border);
+}
+
+.menu-item-media-placeholder-text {
+  font-family: var(--font-section);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.menu-item-name {
+  margin: 0;
+  font-size: 0.95rem;
+  overflow-wrap: break-word;
+}
+
+.menu-item-note {
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+
+.menu-item-desc {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.menu-item-price {
+  margin: auto 0 0;
+  font-family: var(--font-section);
+  color: var(--color-link);
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.menu-cta-note {
+  margin-top: var(--space-5);
+}
+
+.menu-cta-button {
+  display: flex;
+  width: fit-content;
+  margin: var(--space-3) auto 0;
+}
+
+/* Galeria — carrossel duplo (JS liga scrollLeft ao progresso do scroll da
+   página; sem JS, ou com prefers-reduced-motion, cada trilha permanece um
+   carrossel estático, navegável por scroll horizontal manual/toque/teclado,
+   sem animação). overflow-x permanece "auto" mesmo no estado aprimorado por
+   JS: a trilha nunca depende só do script para revelar as fotos — o usuário
+   sempre pode arrastar/rolar manualmente até a última foto de cada lado. */
+/* Full-bleed: a seção usa .container para título/texto, mas o carrossel em
+   si fica fora do .container no HTML, como filho direto de .section — que
+   não tem max-width nem padding horizontal — para ocupar toda a largura da
+   viewport sem recorrer a margens negativas baseadas em vw (que arriscam
+   overflow horizontal na página). O padding lateral do trilho abaixo evita
+   que as fotos fiquem coladas na borda da tela; como fica dentro do próprio
+   elemento com overflow-x: auto, não afeta a largura de rolagem do body. */
+/* #galeria ganha altura extra (min-height abaixo) para compensar o dobro de
+   scrollWidth/maxOffset das trilhas (20 fotos, 10 por trilha, antes eram 10
+   no total) — sem essa compensação o movimento horizontal ficaria brusco,
+   pois o mesmo espaço de rolagem vertical passaria a mover o dobro de
+   distância horizontal. A fórmula de progress em setupGalleryCarousel não
+   muda; só aumenta o "espaço" disponível para ela variar de 0 a 1. O
+   carrossel fica sticky dentro da seção alongada para que o scroll extra
+   mantenha as fotos visíveis (sem vão em branco) enquanto revela o
+   movimento horizontal; ele se solta naturalmente perto do fim da seção. */
+#galeria {
+  position: relative;
+  min-height: 340vh;
+}
+
+@media (min-width: 640px) {
+  #galeria {
+    min-height: 260vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  #galeria {
+    min-height: 240vh;
+  }
+}
+
+.gallery-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  width: 100%;
+  min-width: 0;
+  position: sticky;
+  top: var(--header-offset);
+  z-index: 1;
+}
+
+.gallery-track {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: var(--space-1);
+  padding-inline: var(--space-3);
+}
+
+.gallery-track img {
+  flex: 0 0 auto;
+  width: 200px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 640px) {
+  .gallery-track img {
+    width: 240px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-track img {
+    width: 280px;
+  }
+}
+
+/* Estado aprimorado por JS: além da rolagem manual (sempre disponível, pois
+   overflow-x continua "auto"), a posição de rolagem é também vinculada ao
+   progresso do scroll da página (via scrollLeft, atualizado em
+   requestAnimationFrame). Desativado quando prefers-reduced-motion: reduce
+   está ativo — nesse caso a trilha volta a ser um carrossel puramente
+   manual. */
+.gallery-carousel--enhanced .gallery-track {
+  scroll-snap-type: none;
+}
+
+.gallery-carousel--enhanced .gallery-track-a,
+.gallery-carousel--enhanced .gallery-track-b {
+  scroll-behavior: auto;
+}
+
+/* Contato */
+.contato-grid {
+  display: grid;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .contato-grid {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.contato-cta {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+}
+
+.contato-cta p {
+  margin: 0;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 2px solid var(--color-border);
+  padding: var(--space-5) 0 0;
+  background: var(--color-surface);
+}
+
+.footer-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1.3fr 1fr 1fr;
+  }
+}
+
+.footer-col {
+  min-width: 0;
+}
+
+.footer-col-title {
+  font-size: 0.85rem;
+  margin: 0 0 var(--space-2);
+}
+
+.footer-col-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+}
+
+.footer-logo {
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-bottom: var(--space-1);
+}
+
+.footer-brand-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.footer-brand-desc {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.footer-address {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-2);
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 44px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-social-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  color: var(--color-text);
+}
+
+.footer-legal {
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+}
+
+.footer-legal p {
+  font-size: 0.85rem;
+  margin: 0;
+  max-width: none;
+}
+
+.footer-bottom {
+  padding-bottom: var(--space-3);
+}
