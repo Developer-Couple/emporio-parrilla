@@ -60,6 +60,53 @@
     });
   }
 
+  function setupMobileNav() {
+    var header = document.querySelector('.site-header');
+    var toggle = document.getElementById('mobileNavToggle');
+    var nav = document.getElementById('primaryNavigation');
+    if (!header || !toggle || !nav) return;
+
+    var label = toggle.querySelector('.mobile-nav-toggle-label');
+    var mq = window.matchMedia ? window.matchMedia('(min-width: 768px)') : null;
+
+    function setOpen(open) {
+      header.classList.toggle('is-nav-open', open);
+      nav.setAttribute('data-open', open ? 'true' : 'false');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (label) {
+        label.textContent = open ? 'Fechar menu' : 'Abrir menu';
+      }
+    }
+
+    function closeOnDesktop(event) {
+      if (event.matches) setOpen(false);
+    }
+
+    toggle.addEventListener('click', function () {
+      var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      setOpen(!isOpen);
+      if (!isOpen) {
+        var firstNavLink = nav.querySelector('a');
+        if (firstNavLink) firstNavLink.focus();
+      }
+    });
+
+    nav.addEventListener('click', function (event) {
+      var target = event.target;
+      if (target && target.closest && target.closest('a')) {
+        setOpen(false);
+      }
+    });
+
+    if (mq) {
+      if (mq.addEventListener) mq.addEventListener('change', closeOnDesktop);
+      else if (mq.addListener) mq.addListener(closeOnDesktop);
+    }
+
+    header.classList.add('is-nav-ready');
+    setOpen(false);
+  }
+
   function setupHeroVideo() {
     var video = document.getElementById('heroVideo');
     if (!video) return;
@@ -596,6 +643,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     safeSetup(setupTheme);
+    safeSetup(setupMobileNav);
     safeSetup(setupHeroVideo);
     safeSetup(setupHeroEntrance);
     safeSetup(setupMenuReveal);
